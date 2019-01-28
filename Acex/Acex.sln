@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acex", "Acex\Acex.csproj", "{A7EFB1FB-842D-4379-8825-3878F8F0CE81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7EFB1FB-842D-4379-8825-3878F8F0CE81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7EFB1FB-842D-4379-8825-3878F8F0CE81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7EFB1FB-842D-4379-8825-3878F8F0CE81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7EFB1FB-842D-4379-8825-3878F8F0CE81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9EF0E619-4881-4912-B430-8F9B0BBC9453}
+	EndGlobalSection
+EndGlobal
