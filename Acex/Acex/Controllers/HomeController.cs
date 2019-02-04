@@ -10,29 +10,33 @@ namespace Acex.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Principal()
         {
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Contenedor() => View();
+
+
+        public IActionResult Publicar()
         {
-            ViewData["Message"] = "Your application description page.";
 
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Pais()
         {
-            ViewData["Message"] = "Your contact page.";
 
-            return View();
+
+            return View("~/Views/Catalogo/pais.cshtml");
+        }
+        public IActionResult carrito()
+        {
+
+
+            return View("~/Views/Catalogo/carritocompra.cshtml");
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

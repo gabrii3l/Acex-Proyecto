@@ -1,0 +1,409 @@
+﻿
+@{
+    ViewData["Title"] = "carrito";
+}
+
+<div class="content-page">
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-box">
+                        <!--            <h4 class="header-title m-t-0">Basic Form</h4>
+                                                            <p class="text-muted font-14 m-b-20">
+                                                                Parsley is a javascript form validation library. It helps you provide your users with feedback on their form submission before sending it to your server.
+                                                            </p>-->
+
+                        <form action="#">
+                            <div class="form-group clearfix ">
+                                <div class="col-lg-6">
+                                    <label for="userName">Nombre del Producto<span class="text-danger"></span></label>
+                                    <input type="text" name="nick" parsley-trigger="change" required
+                                           placeholder="Ingrese Nombre de Publicación" class="form-control" id="userName">
+
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="userName">Moneda<span class="text-danger"></span></label>
+                                    <select class="selectpicker show-tick" name="combo" data-style="btn-primary btn-bordered">
+                                        <option value="P">Pesos Chilenos ($)</option>
+                                        <option value="US">Dolar Americano (US $)</option>
+                                        <option value="UF">Unidad de Fomento (UF)</option>
+                                        <option value="E">Euro (€)</option>
+                                        <option value="UTM">Unidad Tributaria Mensual (UTM)</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-lg-2">
+                                    <label for="userName">Código Comercio<span class="text-danger"></span></label>
+                                    <input type="text" name="nick" parsley-trigger="change" required
+                                           placeholder="Ingrese Código Comercio" class="form-control" id="userName">
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="form-group clearfix">
+                                <div class="col-lg-3">
+                                    <label for="pass1">Buscar Por<span class="text-danger">*</span></label>
+                                    <select class="selectpicker " name="combo" data-style="btn-primary btn-bordered">
+                                        <option value="P">Fecha Creación</option>
+                                        <option value="US">Fecha Publicación</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="pass1">Estado<span class="text-danger">*</span></label>
+                                    <select class="selectpicker show-tick" name="combo" data-style="btn-primary btn-bordered">
+                                        <option value="P">Mejor Combinación</option>
+                                        <option value="US">Justo Para ti</option>
+                                        <option value="UF">Ofertas Relámpago</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="pass1">Categoría<span class="text-danger">*</span></label>
+                                    <select class="selectpicker show-tick" name="combo" data-style="btn-primary btn-bordered">
+                                        <option value="P">Alimentación</option>
+                                        <option value="US">Constructoras</option>
+                                        <option value="UF">Editoriales</option>
+                                        <option value="UF">VideoJuegos</option>
+                                        <option value="UF">Cine</option>
+                                        <option value="UF">Energía</option>
+                                        <option value="UF">Software</option>
+                                        <option value="UF">Agrícolas</option>
+                                        <option value="UF">Salitreras</option>
+                                        <option value="UF">Otras</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <div class="col-lg-3">
+                                    <label for="emailAddress">Fecha Desde<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <input type="date" class="form-control" placeholder="mm/dd/yyyy" id="datepicker">
+                                        <span class="input-group-addon bg-custom b-0"><i class="mdi mdi-calendar text-white"></i></span>
+                                    </div><!-- input-group -->
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="emailAddress">Fecha Hasta<span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <input type="date" class="form-control" placeholder="mm/dd/yyyy" id="datepicker">
+                                        <span class="input-group-addon bg-custom b-0"><i class="mdi mdi-calendar text-white"></i></span>
+                                    </div><!-- input-group -->
+                                </div>
+                            </div>
+
+
+                            <div class="form-group text-right m-b-0">
+                                <button class="btn btn-primary waves-effect waves-light" type="submit">
+                                    Buscar
+                                </button>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <div class="row">
+
+                            <div class="col-lg-8 col-lg-offset-1 m-t-sm-50">
+                                <h1><b>Mejor combinación</b></h1>
+
+                                <div class="row">
+                                    @for (int i = 1; i < 10; i++)
+                                    {
+                                        var imagen = Convert.ToString(@i) + ".jpg";
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="~/assets/images/paises/chile/@imagen" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="<?php echo base_url(); ?>index.php/catalogo/pais/detalle" class="btn btn-primary waves-effect waves-light"
+                                                       role="button">
+                                                        Añadir
+                                                    </a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    }
+                                    @for (int i = 1; i < 11; i++)
+                                    {
+                                        var imagen = Convert.ToString(@i) + ".jpg";
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="~/assets/images/paises/chile/@imagen" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="<?php echo base_url(); ?>index.php/catalogo/pais/detalle" class="btn btn-primary waves-effect waves-light"
+                                                       role="button">
+                                                        Añadir
+                                                    </a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    }
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/1.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/2.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1><b>Justo Para ti</b></h1>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/3.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/4.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/5.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1><b>Ofertas Relámpago</b></h1>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/6.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/7.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/8.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/9.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/10.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/11.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="thumbnail">
+                                            <img src="/assets/images/paises/chile/12.jpg" class="img-responsive">
+                                            <div class="caption">
+                                                <h4>NOMBRE PRODUCTO</h4>
+                                                <p>
+                                                    DESCRIPCION PRODUCTO
+                                                </p>
+                                                <p>
+                                                    <a href="#"
+                                                       class="btn btn-primary waves-effect waves-light"
+                                                       role="button">Añadir</a>
+                                                    <!--                                        <a href="#"
+                                                    class="btn btn-default waves-effect m-l-5"
+                                                    role="button">Button</a>-->
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,73 +2,372 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Acex</title>
-
+    <title>Codefox - Responsive Admin Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- C3 charts css -->
+        <link href="/assets/plugins/c3/c3.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- App css -->
+        <link href="/assets/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" />
+        <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/menu.css" rel="stylesheet" type="text/css" />
+        <link href="/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+        <script src="/assets/js/modernizr.min.js"></script>
+
     </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
+
 </head>
+
+
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Acex</a>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <div class="topbar">
+
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <!--<a href="index.html" class="logo"><span>Code<span>Fox</span></span><i class="mdi mdi-layers"></i></a>-->
+                <!-- Image logo -->
+                <a href="index.html" class="logo">
+                    <span>
+                        <img src="assets/images/LogoAcexP2.png" alt="" height="50">
+                    </span>
+                    <i>
+                        <img src="assets/images/LogoAcexP3.png" alt="" height="28">
+                    </i>
+                </a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
+
+            <!-- Button mobile view to collapse sidebar menu -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+
+                    <!-- Navbar-left -->
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <button type="button" class="button-menu-mobile open-left waves-effect">
+                                <i class="dripicons-menu"></i>
+                            </button>
+                        </li>
+
+                        <li class="hidden-xs lang-option">
+                            <select class="selectpicker form-control" title="" data-width="110px">
+                                <option> English </option>
+                                <option> French </option>
+                                <option> Germany </option>
+                                <option> Spanish</option>
+                            </select>
+                        </li>
+                    </ul>
+
+                    <!-- Right(Notification) -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden-xs">
+                            <form role="search" class="app-search">
+                                <input type="text" placeholder="Search..."
+                                       class="form-control">
+                                <a href=""><i class="fa fa-search"></i></a>
+                            </form>
+                        </li>
+                        <li>
+                            <a href="#" class="right-menu-item dropdown-toggle" data-toggle="dropdown">
+                                <i class="dripicons-bell"></i>
+                                <span class="badge badge-pink">4</span>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-lg user-list notify-list">
+                                <li class="list-group notification-list m-b-0">
+                                    <div class="slimscroll">
+                                        <!-- list item-->
+                                        <a href="javascript:void(0);" class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left p-r-10">
+                                                    <em class="fa fa-diamond bg-primary"></em>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                    <p class="m-0">
+                                                        There are new settings available
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <!-- list item-->
+                                        <a href="javascript:void(0);" class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left p-r-10">
+                                                    <em class="fa fa-cog bg-warning"></em>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5 class="media-heading">New settings</h5>
+                                                    <p class="m-0">
+                                                        There are new settings available
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <!-- list item-->
+                                        <a href="javascript:void(0);" class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left p-r-10">
+                                                    <em class="fa fa-bell-o bg-custom"></em>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5 class="media-heading">Updates</h5>
+                                                    <p class="m-0">
+                                                        There are <span class="text-primary font-600">2</span> new updates available
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <!-- list item-->
+                                        <a href="javascript:void(0);" class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left p-r-10">
+                                                    <em class="fa fa-user-plus bg-danger"></em>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5 class="media-heading">New user registered</h5>
+                                                    <p class="m-0">
+                                                        You have 10 unread messages
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <!-- list item-->
+                                        <a href="javascript:void(0);" class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left p-r-10">
+                                                    <em class="fa fa-diamond bg-primary"></em>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                                    <p class="m-0">
+                                                        There are new settings available
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <!-- list item-->
+                                        <a href="javascript:void(0);" class="list-group-item">
+                                            <div class="media">
+                                                <div class="media-left p-r-10">
+                                                    <em class="fa fa-cog bg-warning"></em>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5 class="media-heading">New settings</h5>
+                                                    <p class="m-0">
+                                                        There are new settings available
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <!-- end notification list -->
+                            </ul>
+                        </li>
+
+                        <li class="dropdown user-box">
+                            <a href="" class="dropdown-toggle waves-effect user-link" data-toggle="dropdown" aria-expanded="true">
+                                <img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle user-img">
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
+                                <li><a href="javascript:void(0)">Profile</a></li>
+                                <li><a href="javascript:void(0)"><span class="badge badge-info pull-right">4</span>Settings</a></li>
+                                <li><a href="javascript:void(0)">Lock screen</a></li>
+                                <li class="divider"></li>
+                                <li><a href="javascript:void(0)">Logout</a></li>
+                            </ul>
+                        </li>
+
+                    </ul> <!-- end navbar-right -->
+
+                </div><!-- end container -->
+            </div><!-- end navbar -->
         </div>
-    </nav>
+        <!-- Top Bar End -->
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <div class="slimscroll-menu" id="remove-scroll">
 
-    <partial name="_CookieConsentPartial" />
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metisMenu nav" id="side-menu">
+                        <li class="menu-title">Navigation</li>
+                        <li>
+                            <a asp-area="" asp-controller="Principal" asp-action="Contenedor"><i class="fi-air-play"></i><span class="badge badge-success pull-right">1</span><span>principal</span></a>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - Acex</p>
-        </footer>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Principal" asp-action="Publicar"><i class="fi-air-play"></i><span>publicar</span></a>
+
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" aria-expanded="true"><i class="fi-briefcase"></i> <span> Publicacion </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level nav" aria-expanded="true">
+                                <li>
+                                    <a asp-area="" asp-controller="Principal" asp-action="Publicar"><i class="fi-air-play"></i><span>Publicar</span></a>
+
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Principal" asp-action="Publicar"><i class="fi-air-play"></i><span>Buscar y Gestionar</span></a>
+
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Principal" asp-action="Publicar"><i class="fi-air-play"></i><span>Buscar Socio</span></a>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" aria-expanded="true"><i class="fi-briefcase"></i> <span> Administración </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level nav" aria-expanded="true">
+                                <li>
+                                    <a asp-area="" asp-controller="Administracion" asp-action="Administracion"><i class="fi-air-play"></i><span>Cambio de Clave</span></a>
+
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Administracion" asp-action="Infoempresa"><i class="fi-air-play"></i><span>Información de Empresa</span></a>
+
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Administracion" asp-action="Infopersonal"><i class="fi-air-play"></i><span>Información Personal</span></a>
+
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Administracion" asp-action="Infousu"><i class="fi-air-play"></i><span>Información de Usuario</span></a>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" aria-expanded="true"><i class="fi-briefcase"></i> <span> Contrato </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level nav" aria-expanded="true">
+                                <li>
+                                    <a asp-area="" asp-controller="Principal" asp-action="Publicar"><i class="fi-air-play"></i><span>Crear Contrato</span></a>
+
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" aria-expanded="true"><i class="fi-briefcase"></i> <span> Catálogo </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level nav" aria-expanded="true">
+                                <li>
+                                    <a asp-area="" asp-controller="Principal" asp-action="Pais"><i class="fi-air-play"></i><span>Carrito de Compra</span></a>
+
+                                </li>
+                                <li>
+                                    <a asp-area="" asp-controller="Principal" asp-action="Publicar"><i class="fi-air-play"></i><span>Mi Carro</span></a>
+
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" aria-expanded="true"><i class="fi-briefcase"></i> <span> Expotacion </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level nav" aria-expanded="true">
+                                <li>
+                                    <a asp-area="" asp-controller="Principal" asp-action="Publicar"><i class="fi-air-play"></i><span>Linea de Tiempo</span></a>
+
+                                </li>
+
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- Sidebar -->
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+
+
+        <partial name="_CookieConsentPartial" />
+
+
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; 2019 - Acex</p>
+            </footer>
+        </div>
+
+
+
     </div>
 
     <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+
+        <script>
+            var resizefunc = [];
         </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+
+
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>
+        <script src="/assets/js/metisMenu.min.js"></script>
+        <script src="/assets/js/waves.js"></script>
+        <script src="/assets/js/jquery.slimscroll.js"></script>
+        <script src="/assets/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+
+        <!-- Counter js  -->
+        <script src="/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+        <script src="/assets/plugins/counterup/jquery.counterup.min.js"></script>
+
+        <!--C3 Chart-->
+        <script type="text/javascript" src="/assets/plugins/d3/d3.min.js"></script>
+        <script type="text/javascript" src="/assets/plugins/c3/c3.min.js"></script>
+
+        <!-- Dashboard init -->
+        <script src="/assets/pages/jquery.dashboard.js"></script>
+
+        <!-- App js -->
+        <script src="/assets/js/jquery.core.js"></script>
+        <script src="/assets/js/jquery.app.js"></script>
+
+
+
     </environment>
 
+
     @RenderSection("Scripts", required: false)
+
+
+
 </body>
 </html>
+
